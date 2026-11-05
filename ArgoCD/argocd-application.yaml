@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ivolve
+  namespace: argocd
+spec:
+  destination:
+    name: in-cluster
+    namespace: default
+  project: default
+  source:
+    path: ArgoCD/
+    repoURL: https://github.com/MostafaOsmanFathi/IVolveArgoCD.git
+    targetRevision: HEAD
