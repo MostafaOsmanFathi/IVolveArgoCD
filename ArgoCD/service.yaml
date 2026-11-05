@@ -4,11 +4,14 @@ metadata:
   name: ivolvaappsvc
   namespace: ivolve
 spec:
+  type: NodePort
+  # Cluster = accept traffic arriving on any node IP (0.0.0.0/0 subject to host firewall).
+  externalTrafficPolicy: Cluster
   ports:
   - name: http
     port: 80
     protocol: TCP
     targetPort: 3000
+    nodePort: 30080
   selector:
     app: ivolveapp
-  type: ClusterIP
