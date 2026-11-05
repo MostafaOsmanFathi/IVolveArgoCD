@@ -32,7 +32,7 @@ spec:
               name: ivolvesecret
         - name: DB_NAME
           value: ivolve
-        image: mostafaosmanfathi/ivolve-nodejs-app:latest
+        image: mostafaosmanfathi/ivolve-nodejs-app:35
         imagePullPolicy: Always
         name: node-app
         ports:
