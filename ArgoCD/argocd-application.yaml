@@ -6,9 +6,15 @@ metadata:
 spec:
   destination:
     name: in-cluster
-    namespace: default
+    namespace: ivolve
   project: default
   source:
     path: ArgoCD/
     repoURL: https://github.com/MostafaOsmanFathi/IVolveArgoCD.git
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
